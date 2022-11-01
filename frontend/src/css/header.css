@@ -1,0 +1,35 @@
+.app-header {
+    height: 100px;
+    background-color: black;
+}
+
+.content {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.header-title {
+    height: 40px;
+    color: white;
+
+}
+
+.sub-title {
+    color: white;
+
+}
+
+.header-nav {
+    height: auto;
+}
+
+.nav-list {
+    display: inline-block;
+}
+
+.nav-item {
+    width: 100px;
+    list-style: none;
+    float: left;
+    color: white;
+}
