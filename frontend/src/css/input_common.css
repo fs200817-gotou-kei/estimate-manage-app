@@ -1,0 +1,28 @@
+.search-conditions {
+    height: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.estimate-condition {
+    margin-top: 20px;
+}
+
+.search-label {
+    width: 200px;
+    display: inline-block;
+    background-color: gray;
+}
+
+.search-input {
+    height: 23px;
+    border-color: gray;
+    border: solid 1px
+}
+
+.search-button {}
+
+.customer-button {}
+
+.clear-button {}

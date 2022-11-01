@@ -1,0 +1,19 @@
+.border {
+    display: flex;
+    align-items: center;
+}
+
+.border:before,
+.border:after {
+    border-top: 1px solid;
+    content: "";
+    flex-grow: 1;
+}
+
+.border:before {
+    margin-right: 1rem;
+}
+
+.border:after {
+    margin-left: 1rem;
+}
