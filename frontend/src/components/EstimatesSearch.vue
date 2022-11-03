@@ -25,7 +25,7 @@
                 </select>
                 <button class="search-button">検索</button>
             </div>
-            <div class=" estimate-condition">
+            <div class="estimate-condition">
                 <label class="search-label">顧客名</label>
                 <input class="search-input" readonly />
                 <button class="customer_button">顧客選択</button>
@@ -41,22 +41,35 @@
             </div>
         </div>
     </div>
+    <SearchResult v-if="this.datas !== null" :datas=this.estimates :headersName=this.headersName />
 </template>
 
 <script>
-import '../css/estimates_search.css'
+import '../css/border.css'
 import '../css/input_common.css'
 import EstimatesService from '../services/EstimatesService'
+import SearchResult from './SearchResult.vue'
 
 export default {
     name: 'EstimatesSearch',
+    components: {
+        SearchResult
+    },
     data() {
         return {
-            selectEstimate: null
+            selectEstimate: null,
+            headersName: ['見積番号', '案件名', 'ステータス', '顧客名', '担当者名', '予算金額', '見積金額'],
+            estimates: null
         }
     },
-    mounted() {
-        EstimatesService.getAllEstimates()
+    methods: {
+        async setDatas() {
+            this.estimates = await EstimatesService.getAllEstimates()
+            console.log(this.estimates)
+        }
+    },
+    created() {
+        this.setDatas()
     }
 }
 
